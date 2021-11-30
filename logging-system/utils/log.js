@@ -38,5 +38,6 @@ else{
 }
 
 module.exports = {
-  logger: logger
+  logger: logger,
+  winstonLogger: winstonLogger
 }
