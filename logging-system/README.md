@@ -1,5 +1,5 @@
 # How to setup a convenient logging system for your Node App ?
-Ressources for the associated Medoum article : https://medium.com/p/fa9039b8dfa6
+Ressources for the associated Medium article : https://medium.com/p/fa9039b8dfa6
 
 In this article I show how I wrote my own dead simple logging module.
 

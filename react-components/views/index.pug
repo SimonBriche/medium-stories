@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="keywords", content="keywords")
+    meta(name="theme-color" content="#b12b28")
+  body
+    h1 Hello there !
+    .__react-cmp(data-react-component="TestComponent1" data-test-attribute="test attribute value")
+    .__react-cmp(data-react-component="TestComponent2")
+
+    #new-component
+
+    script(src=`${process.env.REACT_PUBLIC_URL}/cmp-loader.js`)
+    script.
+      const addNewComponent = () => {
+        //create a new component in the body and parse the whole document
+        setTimeout(() => {
+          const div = document.createElement('div');
+          div.classList.add('__react-cmp');
+          div.setAttribute('data-react-component', 'TestComponent2');
+          document.body.appendChild(div);
+          window.ReactComponents.parseComponents();
+        }, 2000);
+
+        //create a new component in the #new-components container and parse the container only
+        setTimeout(() => {
+          const container = document.getElementById('new-component');
+          const div = document.createElement('div');
+          div.classList.add('__react-cmp');
+          div.setAttribute('data-react-component', 'TestComponent2');
+          container.appendChild(div);
+          window.ReactComponents.parseComponents(container);
+        }, 3000);
+      }
+
+      if(window.ReactComponents && window.ReactComponents.ready){
+        addNewComponent();
+      }
+      else{
+        window.ReactComponentsAsyncInit = () => {
+          addNewComponent();
+        }
+      }

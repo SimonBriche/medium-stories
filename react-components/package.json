@@ -1,0 +1,14 @@
+{
+  "name": "react-components",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2"
+  },
+  "engines": {
+    "node": "16.0.0",
+    "npm": "7.10.0"
+  }
+}
