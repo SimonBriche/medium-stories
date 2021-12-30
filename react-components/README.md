@@ -53,6 +53,31 @@ Once you have finished to develop your components, you can run `npm run build:de
 
 Once everything is OK, you can run `npm run build` and the files will be available for the production environment.
 
+### Bridge events
+You can pass events across components with the `props.bridgeEvent` object:
+- Create a new event in a component with the `CustomEvent` constructor
+- Populate the `detail` property of the event with anything you want
+- Dispatch the event with the `props.bridgeEvent` object
+
+Example:
+```
+const someEvent = new CustomEvent("onSomeEvent", {
+  detail: {
+    my_prop: "my_val"
+  }
+});
+props.bridgeEvent.dispatchEvent(someEvent);
+
+```
+In an other component, listen to the event with the `props.bridgeEvent` object, and handle it.
+
+Example:
+```
+props.bridgeEvent.addEventListener("onSomeEvent", function(e){
+  console.log('here is my_prop:', e.detail.my_prop);
+});
+```
+
 ### CDN Hosting
 You can host your production components files in a CDN if you want to:
 - Set the `PUBLIC_URL` of the CRA `.env` file to your CDN path, e.g. `PUBLIC_URL="https://your-cdn-solution.com/react-cmp/production"`
