@@ -1,5 +1,5 @@
 # How to add React components to an Express powered website using Create React App
-If you want a complete step-by-step tutorial, check the related Medium article : 
+If you want a complete step-by-step tutorial, check the related Medium article : https://medium.com/@briche.simon/dev-irl-how-to-add-react-components-to-an-express-powered-website-using-create-react-app-336670c9261a
 
 ## Express server
 This is a minimal template for a website powered by Node 16.x, ExpressJS and Pug template engine. Don't use it in production!
